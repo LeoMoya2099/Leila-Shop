@@ -1,0 +1,67 @@
+:root {
+  /* Colores más limpios, estilo galería de arte */
+  --text: #444444;
+  --text-h: #111111;
+  --bg: #ffffff;
+  --border: #e5e4e7;
+
+  /* Fuentes elegantes y minimalistas (similares a la referencia) */
+  --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --heading: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  font: 16px/1.6 var(--sans);
+  letter-spacing: 0.3px; /* Un poco de espaciado le da un toque premium */
+  color: var(--text);
+  background: var(--bg);
+  
+  /* Mejoras en el renderizado de texto para que se vea más nítido */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mantenemos el modo oscuro suave por si el sistema del usuario lo pide */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #a1a1aa;
+    --text-h: #ffffff;
+    --bg: #121212;
+    --border: #27272a;
+  }
+}
+
+/* Reset básico para evitar márgenes extraños */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* AQUÍ ESTABA EL PROBLEMA DEL GRID */
+#root {
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  /* Eliminamos el display: flex y flex-direction: column que rompían tu diseño */
+}
+
+/* Títulos más delgados para ese look de arte contemporáneo */
+h1, h2, h3, h4 {
+  font-family: var(--heading);
+  font-weight: 400; /* Le quita lo "gordo" a la letra */
+  color: var(--text-h);
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 1.5rem;
+}

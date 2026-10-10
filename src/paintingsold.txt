@@ -1,0 +1,28 @@
+// src/paintings.js
+export const paintingsData = [
+  {
+    id: 1,
+    title: "DIO",
+    price: 800.00,
+    imageUrl: "/DIO.png", // Asegúrate que coincida con tu imagen
+    description: [
+      "Pintura original al óleo sobre lienzo.",
+      "Pieza única."
+    ],
+    size: "60 cm x 80 cm",
+    soldOut: false
+  },
+  {
+    id: 2,
+    title: "crack",
+    price: 700.00,
+    imageUrl: "https://via.placeholder.com/300x400/800080/ffffff",
+    description: [
+      "Acrílico sobre madera.",
+      "Textura profunda."
+    ],
+    size: "50 cm x 50 cm",
+    soldOut: true
+  }
+  // ... agrega las demás aquí
+];

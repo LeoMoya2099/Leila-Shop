@@ -1,0 +1,140 @@
+/* src/Checkout.css */
+.checkout-container {
+  display: flex;
+  flex-direction: column-reverse; /* En móvil, el resumen arriba */
+  max-width: 1000px;
+  margin: 40px auto;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .checkout-container {
+    flex-direction: row; /* En escritorio, lado a lado */
+  }
+}
+
+.checkout-form-section {
+  flex: 3;
+}
+
+.checkout-summary-section {
+  flex: 2;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* Estilos de la orden */
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.summary-img {
+  width: 60px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.summary-item-details {
+  flex: 1;
+}
+
+.summary-item-title {
+  margin: 0 0 5px 0;
+  font-weight: 500;
+}
+
+.summary-item-size {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.summary-item-price {
+  margin: 0;
+  font-weight: 500;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.final-total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #111;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+
+/* Estilos del formulario simulado */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.radio-group label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.paypal-info-box {
+  background-color: #e6f2ff;
+  border-left: 4px solid #0070ba;
+  padding: 15px;
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.fake-paypal-btn {
+  background-color: #ffc439;
+  color: #111;
+  border: none;
+  border-radius: 4px;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  width: 100%;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.fake-paypal-btn:hover {
+  opacity: 0.9;
+}
+
+.secure-badge {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.checkout-summary-section {
+  flex: 2;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  color: #111111; /* Agrega esta línea para evitar conflicto con el modo oscuro */
+}
