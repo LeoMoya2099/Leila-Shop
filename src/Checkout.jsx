@@ -107,7 +107,7 @@ export default function Checkout() {
           </div>
 
           <div className="paypal-button-container">
-            <PayPalScriptProvider options={{ "client-id": import.meta.env.VITE_PAYPAL_CLIENT_ID, "currency": "USD" }}>
+            <PayPalScriptProvider options={{ "client-id": import.meta.env.VITE_PAYPAL_CLIENT_ID.trim(), "currency": "USD" }}>
               <PayPalButtons 
                 style={{ layout: "vertical", color: "gold", shape: "rect" }}
                 createOrder={(data, actions) => {
