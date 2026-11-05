@@ -1,6 +1,14 @@
-/* ProductPage.css */
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap');
+body {
+  background-color: #2a1f1c;
+  color: #f2f0ef;
+  font-family: 'Cormorant Garamond', serif;
+}
 
+/* Estilo para los selectores o menús desplegables si los tienes */
+select {
+  background-color: #faf4f4;
+  color: #000000;
+}
 .product-container {
   display: flex;
   flex-direction: row; 
@@ -37,16 +45,16 @@
 
 .product-price {
   color: #ffffff !important; 
-  font-size: 1.25rem; 
+  font-size: 1.5rem; 
   font-weight: 500; 
   margin-top: 5px; 
 }
 
 .product-details, 
 .product-details p {
-  font-family: 'Work Sans', sans-serif;
+
   color: #ffffff;
-  font-size: 1.15rem; 
+  font-size: 1.6rem; 
   font-weight: 400;
   line-height: 1.6; 
   margin-bottom: 15px;

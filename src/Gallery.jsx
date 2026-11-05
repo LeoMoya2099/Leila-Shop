@@ -54,7 +54,7 @@ export default function Gallery() {
             <a href="https://www.tiktok.com/@lady_leila006?_r=1&_t=ZS-9B6kDDs5M3S" target="_blank" rel="noopener noreferrer">TikTok</a>
           </div>
         </div>
-        <h1 className="shop-title">shop</h1>
+        <h1 className="shop-title">Shop</h1>
       </header>
       {/* -------------------------------- */}
     <div className="gallery-container">

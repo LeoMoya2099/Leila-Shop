@@ -1,4 +1,14 @@
+body {
+  background-color: #2a1f1c;
+  color: #f2f0ef;
+  font-family: 'Cormorant Garamond', serif;
+}
 
+/* Estilo para los selectores o menús desplegables si los tienes */
+select {
+  background-color: #faf4f4;
+  color: #000000;
+}
 .gallery-grid {
   display: grid;
   /* Esta línea es la magia: crea tantas columnas como quepan, con un mínimo de 250px y un máximo de 1 fracción del espacio. */
@@ -22,12 +32,14 @@
 /* Centramos el título */
 .gallery-title {
   text-align: center;
-  color: #ffffff;
-  font-size: 1.1rem;
+  color: #f2f0ef; /* Mantenemos el color hueso que definiste en tu body */
+  font-family: 'Cormorant Garamond', serif; /* Forzamos la tipografía elegante */
+  font-size: 1.4rem; /* Un poco más grande para que luzcan los remates de las letras */
+  font-weight: 400;
+  letter-spacing: 1px; /* Separación sutil típica de las fichas de arte */
   text-transform: capitalize;
   margin-top: 15px;
 }
-
 /* Centramos el precio para que haga juego */
 .gallery-price {
   text-align: center;
@@ -77,7 +89,7 @@
 .social-links a {
   text-decoration: none;
   color: #aaa; /* Color gris sutil */
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 300;
   transition: color 0.3s ease;
 }
@@ -86,14 +98,14 @@
   color: #fff; /* Ilumina al pasar el mouse */
 }
 
-/* Título central gigante y limpio */
 .shop-title {
   text-align: center;
-  font-size: 3rem;
+  color: #f2f0ef;
+  font-family: 'Cormorant Garamond', serif; /* Aseguramos que también use la fuente clásica */
+  font-size: 3.5rem;
   font-weight: 300;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   margin-top: 40px;
-  color: #fff; /* Cambia a #333 si tu fondo es blanco */
 }
 /* =========================================
    ESCALABILIDAD PARA CHECKOUT EN CELULARES
