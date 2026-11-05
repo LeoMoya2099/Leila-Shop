@@ -51,7 +51,7 @@ export default function Gallery() {
           <div className="artist-name">Lady Leila's Art Shop</div>
           <div className="social-links">
             <a href="https://www.instagram.com/leila_emo4ever" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://tiktok.com/@tu_usuario" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="https://www.tiktok.com/@lady_leila006?_r=1&_t=ZS-9B6kDDs5M3S" target="_blank" rel="noopener noreferrer">TikTok</a>
           </div>
         </div>
         <h1 className="shop-title">shop</h1>
