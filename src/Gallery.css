@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #2a1f1c;
   color: #f2f0ef;
@@ -9,9 +13,9 @@ select {
   background-color: #faf4f4;
   color: #000000;
 }
+
 .gallery-grid {
   display: grid;
-  /* Esta línea es la magia: crea tantas columnas como quepan, con un mínimo de 250px y un máximo de 1 fracción del espacio. */
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 50px; /* El espacio entre cada pintura */
   padding: 20px;
@@ -22,24 +26,25 @@ select {
   width: 100%;
   height: auto;
   object-fit: cover; /* Mantiene la proporción sin deformar la imagen */
+  transition: transform 0.3s ease;
 }
-
-
 
 .gallery-item img:hover {
   transform: scale(1.02);
 }
+
 /* Centramos el título */
 .gallery-title {
   text-align: center;
-  color: #f2f0ef; /* Mantenemos el color hueso que definiste en tu body */
-  font-family: 'Cormorant Garamond', serif; /* Forzamos la tipografía elegante */
-  font-size: 1.4rem; /* Un poco más grande para que luzcan los remates de las letras */
+  color: #f2f0ef;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
   font-weight: 400;
-  letter-spacing: 1px; /* Separación sutil típica de las fichas de arte */
+  letter-spacing: 1px;
   text-transform: capitalize;
   margin-top: 15px;
 }
+
 /* Centramos el precio para que haga juego */
 .gallery-price {
   text-align: center;
@@ -52,12 +57,13 @@ select {
 /* Centramos el texto de Sold Out y lo ponemos en rojo */
 .gallery-sold-out {
   text-align: center;
-  color: #ff4444; /* Rojo para que resalte que ya se vendió */
+  color: #ff4444;
   font-weight: bold;
   font-size: 1.1rem;
   margin-top: 5px;
-  text-transform: uppercase; /* Opcional: lo pone en MAYÚSCULAS para mayor impacto */
+  text-transform: uppercase;
 }
+
 /* --- ESTILOS DEL HEADER MINIMALISTA --- */
 .shop-header {
   width: 100%;
@@ -76,9 +82,9 @@ select {
 /* Tipografía delgada y separada para el nombre */
 .artist-name {
   font-size: 1.8rem;
-  font-weight: 300; /* Letra delgada */
+  font-weight: 300;
   letter-spacing: 1.5px;
-  color: #fff; /* Cambia a #333 si tu fondo es blanco */
+  color: #fff;
 }
 
 .social-links {
@@ -88,39 +94,92 @@ select {
 
 .social-links a {
   text-decoration: none;
-  color: #aaa; /* Color gris sutil */
+  color: #aaa;
   font-size: 1.5rem;
   font-weight: 300;
   transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-  color: #fff; /* Ilumina al pasar el mouse */
+  color: #fff;
 }
 
 .shop-title {
   text-align: center;
   color: #f2f0ef;
-  font-family: 'Cormorant Garamond', serif; /* Aseguramos que también use la fuente clásica */
+  font-family: 'Cormorant Garamond', serif;
   font-size: 3.5rem;
   font-weight: 300;
   letter-spacing: 4px;
   margin-top: 40px;
 }
-/* =========================================
-   ESCALABILIDAD PARA CHECKOUT EN CELULARES
-   ========================================= */
+
+/* --- NUEVOS ESTILOS PARA CATEGORÍAS Y PRINTS --- */
+.category-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  letter-spacing: 2px;
+}
+
+.category-nav a {
+  color: #a8a09a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.category-nav a:hover {
+  color: #f2f0ef;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.category-nav span {
+  color: #5c4d49;
+}
+
+.catalog-section {
+  max-width: 1200px;
+  margin: 0 auto 80px auto;
+  padding: 0 20px;
+  scroll-margin-top: 30px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: #f2f0ef;
+  margin-bottom: 35px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #3d312e;
+}
+
+.empty-category-msg {
+  text-align: center;
+  color: #a8a09a;
+  font-size: 1.3rem;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+
 @media (max-width: 768px) {
   .checkout-grid {
-    grid-template-columns: 1fr !important; /* Cambia a 1 sola columna */
-    gap: 20px !important; /* Reduce el espacio entre las tarjetas */
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
   }
 
   .checkout-page-wrapper {
-    padding: 20px 15px !important; /* Reduce los márgenes laterales */
+    padding: 20px 15px !important;
   }
 
-  /* Opcional: hacer que los textos y botones se adapten mejor al ancho */
   .checkout-summary-card, 
   .checkout-form-section {
     padding: 20px !important;
