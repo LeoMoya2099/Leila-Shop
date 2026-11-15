@@ -16,8 +16,9 @@ select {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 50px; /* El espacio entre cada pintura */
+  /* auto-fill conserva el tamaño de las columnas aunque solo haya 1 elemento */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 50px;
   padding: 20px;
 }
 
