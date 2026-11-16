@@ -42,6 +42,15 @@ export default function ProductPage() {
   };
 
   return (
+
+    <div className="product-page-wrapper">
+    {/* Navegación superior izquierda */}
+    <div className="top-nav">
+      <Link to="/" className="back-link">
+        ← Back to gallery
+      </Link>
+    </div>
+
     <div className="product-container">
       <div className="product-image-section">
         {/* Aquí jala la imagen de tu carpeta public usando la ruta de Firebase */}
@@ -72,8 +81,9 @@ export default function ProductPage() {
         )}
         
         <br/>
-        <Link to="/" style={{ color: '#555', textDecoration: 'underline' }}>← Volver a la galería</Link>
+        
       </div>
+    </div>
     </div>
   );
 }

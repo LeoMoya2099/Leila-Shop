@@ -1,7 +1,36 @@
-body {
+html, body {
   background-color: #2a1f1c;
   color: #f2f0ef;
   font-family: 'Cormorant Garamond', serif;
+  padding: 0;
+}
+
+.product-page-wrapper {
+  background-color: #2a1f1c;
+  min-height: 100vh;
+  padding-top: 25px; /* Sustituye al margin-top para evitar la barra negra */
+}
+
+.top-nav {
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.back-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  display: inline-block;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.back-link:hover {
+  opacity: 0.75;
+  transform: translateX(-3px);
 }
 
 /* Estilo para los selectores o menús desplegables si los tienes */
@@ -14,11 +43,10 @@ select {
   flex-direction: row; 
   gap: 50px; 
   max-width: 1200px;
-  margin: 40px auto; 
+  margin: 10px auto 40px auto; 
   padding: 0 20px;
   align-items: flex-start; 
 }
-
 .product-image-section {
   flex: 1; 
   width: 100%;
@@ -38,11 +66,13 @@ select {
 }
 
 .product-title {
-  font-size: 2rem;
+  font-family: 'Cormorant Garamond', serif !important;
+  color: #f2f0ef;
+  font-size: 3.2rem;
   margin: 0;
-  font-weight: normal;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
-
 .product-price {
   color: #ffffff !important; 
   font-size: 1.5rem; 
