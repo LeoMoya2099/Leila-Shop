@@ -63,9 +63,7 @@ export default function ProductPage() {
 
         <div className="product-details">
           <p><strong>Size:</strong> {Painting.size}</p>
-          <p><strong>Description: </strong>Original oil painting on canvas
-<br />Pintura original al oleo sobre lienzo  <br />(Unframed)</p> 
-          
+          <p><strong>Description: </strong>{Painting.descript}</p>
 <p className="unique-piece-warning">* Esta es una pieza única. Solo existe 1 disponible.</p>
 <p className="unique-piece-warning">* This is a unique piece. Only 1 is available.</p>
         </div>
