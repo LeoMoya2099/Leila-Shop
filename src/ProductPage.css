@@ -1,19 +1,32 @@
+/* src/ProductPage.css */
+
 :root, html, body, #root {
   background-color: #2a1f1c;
   margin: 0;
   padding: 0;
   min-height: 100vh;
 }
+
 .product-page-wrapper {
   background-color: #2a1f1c;
+  color: #f2f0ef;
+  font-family: 'Cormorant Garamond', serif;
   min-height: 100vh;
-  padding-top: 25px; /* Sustituye al margin-top para evitar la barra negra */
+  padding: 25px 0 70px 0; /* Contiene el espacio inferior para evitar barras negras */
+  box-sizing: border-box;
 }
 
+.product-status-msg {
+  text-align: center;
+  padding-top: 80px;
+  font-size: 1.5rem;
+}
+
+/* Enlace superior izquierdo */
 .top-nav {
-  max-width: 1200px;
-  margin: 0 auto 20px auto;
-  padding: 0 20px;
+  max-width: 1150px;
+  margin: 0 auto 25px auto;
+  padding: 0 24px;
   text-align: left;
 }
 
@@ -21,7 +34,7 @@
   color: #ffffff;
   text-decoration: none;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   letter-spacing: 1px;
   display: inline-block;
   transition: opacity 0.2s ease, transform 0.2s ease;
@@ -32,61 +45,73 @@
   transform: translateX(-3px);
 }
 
-/* Estilo para los selectores o menús desplegables si los tienes */
-select {
-  background-color: #faf4f4;
-  color: #000000;
-}
+/* Contenedor principal en escritorio */
 .product-container {
   display: flex;
-  flex-direction: row; 
-  gap: 50px; 
-  max-width: 1200px;
-  margin: 10px auto 40px auto; 
-  padding: 0 20px;
-  align-items: flex-start; 
+  flex-direction: row;
+  gap: 60px;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 24px;
+  align-items: flex-start;
 }
+
 .product-image-section {
-  flex: 1; 
+  flex: 1.1;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .main-image {
-  width: 100%; 
-  height: auto;
-  border-radius: 8px; 
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 2px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
 }
 
+/* Columna derecha de información */
 .product-info-section {
-  flex: 1; 
+  flex: 1;
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
 .product-title {
   font-family: 'Cormorant Garamond', serif !important;
   color: #f2f0ef;
-  font-size: 3.2rem;
+  font-size: 3.1rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.15;
   margin: 0;
-  font-weight: 400;
-  letter-spacing: 1px;
 }
+
 .product-price {
-  color: #ffffff !important; 
-  font-size: 1.5rem; 
-  font-weight: 500; 
-  margin-top: 5px; 
+  font-family: 'Cormorant Garamond', serif;
+  color: #ded7d1;
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin: 10px 0 25px 0;
 }
 
-.product-details, 
-.product-details p {
+/* Detalles limpios sin líneas horizontales */
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
 
-  color: #ffffff;
-  font-size: 1.6rem; 
+.product-details p {
+  font-family: 'Cormorant Garamond', serif;
+  color: #ded7d1;
+  font-size: 1.4rem;
   font-weight: 400;
-  line-height: 1.6; 
-  margin-bottom: 15px;
+  line-height: 1.55;
+  margin: 0;
 }
 
 .product-details strong {
@@ -94,65 +119,115 @@ select {
   color: #ffffff;
 }
 
-.product-details {
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  padding: 20px 0;
-}
-
-.shipping-info ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin-top: 5px;
-}
-
 .unique-piece-warning {
-  color: #ff4444 !important; 
-  font-weight: 500;
+  color: #d96b66 !important;
+  font-size: 1.25rem !important;
+  margin-top: 6px !important;
 }
 
+/* Botón principal de compra (disponible) */
 .buy-button {
-  background-color: #eeff07; 
-  color: rgb(0, 0, 0);
+  background-color: #ded7d1;
+  color: #1a1514;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
   border: none;
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
+  border-radius: 2px;
+  padding: 16px 32px;
   width: 100%;
-  max-width: 300px;
+  max-width: 380px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .buy-button:hover {
-  background-color: #eeff07;
+  background-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Bloque Sold Out (estilo Andrew Cadima) */
+.sold-out-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.sold-out-label {
+  color: #d9534f;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.sold-out-button {
+  background-color: #c94a44;
+  color: #ffffff;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 2px;
+  padding: 15px 30px;
+  width: 100%;
+  cursor: not-allowed;
+  opacity: 0.92;
 }
 
 /* =========================================
-   ESCALABILIDAD PARA CELULARES (Estilo Cadima)
+   ESCALABILIDAD PARA CELULARES 
    ========================================= */
 @media (max-width: 768px) {
+  .product-page-wrapper {
+    padding: 20px 0 60px 0;
+  }
+
+  .top-nav {
+    padding: 0 24px;
+    margin-bottom: 18px;
+  }
+
   .product-container {
-    flex-direction: column; /* Apila la imagen arriba y la info abajo */
-    margin-top: 10px;
-    padding: 0; /* Quita el padding lateral para que la imagen toque los bordes */
-    gap: 20px;
+    flex-direction: column;
+    padding: 0 24px; /* Márgenes laterales limpios alrededor de la obra */
+    gap: 24px;
   }
 
   .main-image {
-    border-radius: 0; /* Quita los bordes redondeados para un look más crudo */
-    box-shadow: none; /* Quita la sombra en móvil */
+    width: auto;
+    max-width: 100%;
+    max-height: 52vh; /* Deja espacio para ver título, precio y botón sin scrollear de más */
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .product-info-section {
-    padding: 0 20px; /* Regresa los márgenes laterales solo a la caja de texto */
-    text-align: left; /* Asegura que el texto se alinee a la izquierda */
+    width: 100%;
+    padding: 0;
+    text-align: left;
   }
 
   .product-title {
-    font-size: 1.8rem; /* Evita que el título se vea gigantesco en móvil */
+    font-size: 2.3rem;
   }
 
-  .buy-button {
-    max-width: 100%; /* Hace que el botón de compra ocupe todo el ancho de la pantalla */
+  .product-price {
+    font-size: 1.55rem;
+    margin: 6px 0 20px 0;
+  }
+
+  .product-details p {
+    font-size: 1.3rem;
+  }
+
+  .buy-button,
+  .sold-out-wrapper {
+    max-width: 100%; 
   }
 }
