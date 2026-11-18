@@ -47,7 +47,7 @@ export default function Checkout() {
   }
 
   // --- PANTALLA NORMAL DE CHECKOUT ---
-  const shippingOptions = { domestic: 8.00, international: 25.00 };
+  const shippingOptions = { domestic: 6.00, international: 15.00 };
   const currentShippingCost = shippingOptions[shippingType];
   const total = Number(Painting.price) + currentShippingCost;
 

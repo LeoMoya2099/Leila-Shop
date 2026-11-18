@@ -83,7 +83,7 @@ export default function Gallery() {
       <section id="prints" className="catalog-section">
         <h2 className="section-subtitle">Prints</h2>
         {prints.length === 0 ? (
-          <p className="empty-category-msg">Nuevos prints disponibles próximamente.</p>
+          <p className="empty-category-msg">New prints comming soon...</p>
         ) : (
           <div className="gallery-grid">
             {prints.map((print) => (
