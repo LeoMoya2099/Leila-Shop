@@ -9,6 +9,7 @@ export default function ProductPage() {
   const navigate = useNavigate();
   const [Painting, setPainting] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
   useEffect(() => {
     const fetchPainting = async () => {
@@ -17,6 +18,7 @@ export default function ProductPage() {
 
       if (docSnap.exists()) {
         setPainting({ id: docSnap.id, ...docSnap.data() });
+        setCurrentImgIndex(0);
       }
       setLoading(false);
     };
@@ -41,6 +43,20 @@ export default function ProductPage() {
     );
   }
 
+  // Combina la imagen principal con cualquier imagen extra que exista en Firestore
+  const allImages = [
+    Painting.imageUrl,
+    ...(Array.isArray(Painting.extraImages) ? Painting.extraImages : [])
+  ].filter(Boolean);
+
+  const handlePrevImage = () => {
+    setCurrentImgIndex((prev) => (prev === 0 ? allImages.length - 1 : prev - 1));
+  };
+
+  const handleNextImage = () => {
+    setCurrentImgIndex((prev) => (prev === allImages.length - 1 ? 0 : prev + 1));
+  };
+
   const handleCheckout = () => {
     navigate('/checkout', { state: { Painting } });
   };
@@ -49,7 +65,6 @@ export default function ProductPage() {
 
   return (
     <div className="product-page-wrapper">
-      {/* Navegación superior izquierda */}
       <div className="top-nav">
         <Link to="/" className="back-link">
           ← Back to gallery
@@ -57,12 +72,61 @@ export default function ProductPage() {
       </div>
 
       <div className="product-container">
-        {/* Columna de la obra */}
+        {/* Columna de la obra con soporte para múltiples fotos */}
         <div className="product-image-section">
-          <img src={Painting.imageUrl} alt={Painting.title} className="main-image" />
+          <div className="carousel-wrapper">
+            {allImages.length > 1 && (
+              <span className="image-counter">
+                {currentImgIndex + 1} / {allImages.length}
+              </span>
+            )}
+
+            {allImages.length > 1 && (
+              <button
+                type="button"
+                className="carousel-arrow prev"
+                onClick={handlePrevImage}
+                aria-label="Previous image"
+              >
+                ‹
+              </button>
+            )}
+
+            <img
+              src={allImages[currentImgIndex]}
+              alt={`${Painting.title} - view ${currentImgIndex + 1}`}
+              className="main-image"
+            />
+
+            {allImages.length > 1 && (
+              <button
+                type="button"
+                className="carousel-arrow next"
+                onClick={handleNextImage}
+                aria-label="Next image"
+              >
+                ›
+              </button>
+            )}
+          </div>
+
+          {/* Miniaturas seleccionables debajo de la obra */}
+          {allImages.length > 1 && (
+            <div className="thumbnail-strip">
+              {allImages.map((imgUrl, index) => (
+                <img
+                  key={index}
+                  src={imgUrl}
+                  alt={`${Painting.title} thumbnail ${index + 1}`}
+                  className={`thumbnail-item ${index === currentImgIndex ? 'active' : ''}`}
+                  onClick={() => setCurrentImgIndex(index)}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
-        {/* Columna de información (jerarquía limpia estilo Cadima) */}
+        {/* Columna derecha de información */}
         <div className="product-info-section">
           <h1 className="product-title">{Painting.title}</h1>
           <p className="product-price">${Number(Painting.price).toFixed(2)} USD</p>
