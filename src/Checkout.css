@@ -289,3 +289,10 @@
     padding: 22px;
   }
 }
+
+.paypal-button-container {
+  background-color: #f5f0eb;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #3d312e;
+}
